@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './layout/Home';
 import Login from './layout/Login';
 import SignUp from './layout/Signup';
-import GetOneClient from './layout/GetOneClient';
 import AdminHomeMenu from './layout/AdminHomeMenu';
 import DeactivateUserAdmin from './layout/DeactivateUserAdmin';
 import AdminRegisterBook from './layout/AdminRegisterBook';
@@ -43,7 +42,6 @@ function Routes() {
         <Route exact path="/anonymous" component={AnonymousUser} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/sign-up" component={SignUp} />
-        <Route exact path="/v1/get-one-user" component={GetOneClient} />
       </Router>
     </AuthProvider>
   );
