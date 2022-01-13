@@ -19,7 +19,7 @@ const CreateProduct = () => {
     const [result, setResult] = useState([]);
    
     const rentsBook = () =>{
-     axios.post("http://localhost:8080/v1/admin/book",{ title: title, category: category, bookExamples: bookExamples, rented: rented}).then(res =>{
+     axios.put("http://localhost:8080/v1/book/rent",{ title: title, username: userName, event: event}).then(res =>{
           console.log(res);
           console.log(res.data);
           
@@ -30,9 +30,8 @@ const CreateProduct = () => {
 
 
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
-  const [bookExamples, setBookExamples] = useState('');
-  const [rented, setRented] = useState('false');
+  const [userName, setUserName] = useState('');
+  const [event, setEvent] = useState('admin');
   const classes = useStyles();
 
   const onChangeHandler = (event, hook) => {
@@ -45,15 +44,10 @@ const CreateProduct = () => {
       onChange: (event) => onChangeHandler(event, setTitle),
     },
     {
-      title: 'Category',
-      value: category,
-      onChange: (event) => onChangeHandler(event, setCategory),
+      title: 'Username',
+      value: userName,
+      onChange: (event) => onChangeHandler(event, setUserName),
     },
-    {
-        title: 'Book Examples',
-        value: bookExamples,
-        onChange: (event) => onChangeHandler(event, setBookExamples),
-      },
 
   ];
 
@@ -61,7 +55,7 @@ const CreateProduct = () => {
     <React.Fragment>
       <Content>
         <div className={classes.item}>
-          <Typography variant="h5">Register new book </Typography>
+          <Typography variant="h5">Rents a new book </Typography>
           {inputFields.map((input, index) => (
             <TextInput
               key={`${index}_${input.title}`}
@@ -78,7 +72,7 @@ const CreateProduct = () => {
             size="small"
             onClick={rentsBook}
           >
-            Register Book
+            Rent
           </Button>
         </div>
       </Content>

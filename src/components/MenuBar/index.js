@@ -154,12 +154,7 @@ export const MenuBar = (props) => {
         <Divider />
         <List>
           {[
-            { title: 'Home', icon: <LocalAtmIcon />, link: '/' },
-            { title: 'One-Client-Outgoing', icon: <AttachMoneyIcon />, link: '/v1/get-one-client-outgoing' },
-            { title: 'Home', icon: <PaymentIcon />, link: '/v1/buy-product' },
-            { title: 'Home', icon: <StoreIcon />, link: '/v1/create-product' },
-            { title: 'Profile', icon: <AccountCircleIcon />, link: '/profile' },
-            { title: 'Profile', icon: <AccountCircleIcon />, link: '/v1/get-one-user' },
+            { title: 'Home', icon: <HomeIcon />, link: '/' }
           ].map((item, index) => (
             <Link
               to={item.link}

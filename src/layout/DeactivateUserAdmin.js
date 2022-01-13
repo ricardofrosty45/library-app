@@ -14,24 +14,22 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const BuyProduct = () => {
+const CreateProduct = () => {
 
     const [result, setResult] = useState([]);
    
-   const fetchClientSpendings = () =>{
-    axios.post("https://virtual-store-project-back-end.herokuapp.com/v1/product/buy",{ idProduct: idProduct, clientId: clientId}).then(res =>{
-         console.log(res);
-         console.log(res.data);
-         console.log(res.data.outgoing);
-         setResult(res.data.outgoing);
-     }).catch((error) => { console.log(error) })
- 
-    
-   };
+    const deativateUser = () =>{
+     axios.put("http://localhost:8080/v1/admin/inactive/user/"+userId).then(res =>{
+          console.log(res);
+          console.log(res.data);
+          setResult(res.data.outgoing);
+      }).catch((error) => { console.log(error) })     
+    };
 
 
-  const [idProduct, setIdProduct] = useState('');
-  const [clientId, setClientId] = useState('');
+
+  const [userId, setUserId] = useState('');
+  
   const classes = useStyles();
 
   const onChangeHandler = (event, hook) => {
@@ -39,23 +37,18 @@ const BuyProduct = () => {
   };
   const inputFields = [
     {
-      title: 'Id Product',
-      value: idProduct,
-     
-      onChange: (event) => onChangeHandler(event, setIdProduct),
+      title: 'User Id',
+      value: userId,
+      onChange: (event) => onChangeHandler(event, setUserId),
     },
-    {
-      title: 'Client Id',
-      value: clientId,
-      onChange: (event) => onChangeHandler(event, setClientId),
-    },
+
   ];
 
   return (
     <React.Fragment>
       <Content>
         <div className={classes.item}>
-          <Typography variant="h5">Buy Product </Typography>
+          <Typography variant="h5">Deactivate User </Typography>
           {inputFields.map((input, index) => (
             <TextInput
               key={`${index}_${input.title}`}
@@ -70,9 +63,9 @@ const BuyProduct = () => {
             color="primary"
             style={{ marginTop: 20 }}
             size="small"
-            onClick={fetchClientSpendings}
+            onClick={deativateUser}
           >
-            Buy New Product
+            Deactivate
           </Button>
         </div>
       </Content>
@@ -80,4 +73,4 @@ const BuyProduct = () => {
   );
 };
 
-export default BuyProduct;
+export default CreateProduct;
