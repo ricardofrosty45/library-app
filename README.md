@@ -1,6 +1,6 @@
-# library-ms - AXIANS Test Project
+# library-app - AXIANS Test Project
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/ricardofrosty45/library-ms)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/ricardofrosty45/library-app/tree/main)
 
 this is a front end app created with ReactJs and firebase for auth
 
