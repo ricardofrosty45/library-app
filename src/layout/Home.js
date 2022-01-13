@@ -50,12 +50,12 @@ const Home = () => {
   }
 
   const routeChangeAnnonymous = () =>{ 
-    let path = '/'; 
+    let path = '/anonymous'; 
     history.push(path);
   }
 
   const routeChangeBooks= () =>{ 
-    let path = '/'; 
+    let path = '/books'; 
     history.push(path);
   }
 

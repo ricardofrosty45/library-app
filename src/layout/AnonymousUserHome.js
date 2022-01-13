@@ -36,52 +36,17 @@ const Home = () => {
 
   const history = useHistory();
 
-  const routeChangeUsers = () =>{ 
-    let path = '/admin/users'; 
+  const routeChangeGetBooks = () =>{ 
+    let path = '/books'; 
     history.push(path);
   }
-
-  const routeChangeInactivateUsers = () =>{ 
-    let path = '/admin/users/inactivate'; 
-    history.push(path);
-  }
-
-  const routeChangeAvaliableBooks = () =>{ 
-    let path = '/admin/books'; 
-    history.push(path);
-  }
-
-
-  const routeChangeRegisterNewBook = () =>{ 
-    let path = '/admin/book/register'; 
-    history.push(path);
-  }
-
-
-  const routeChangeRentBook = () =>{ 
-    let path = '/admin/book/rent'; 
-    history.push(path);
-  }
-
-
-  const routeChangeReturnBook = () =>{ 
-    let path = '/admin/book/return'; 
-    history.push(path);
-  }
-
-
-  const routeChangeAllAdmins = () =>{ 
-    let path = '/admin/all'; 
-    history.push(path);
-  }
-
 
   return (
     <React.Fragment>
       <CssBaseline />
       <Content title="Home">
         <Typography variant="h5" className={classes.typography}>
-          Admin Profile - Choose Your Action
+          Anonymous Profile - Choose Your Action
         </Typography>
         <PopupState variant="popover" popupId="demo-popup-menu">
       {(popupState) => (
@@ -90,13 +55,7 @@ const Home = () => {
         Menu
       </Button>
       <Menu {...bindMenu(popupState)}>
-        <MenuItem onClick={routeChangeUsers}>Consult All Users</MenuItem>
-        <MenuItem onClick={routeChangeInactivateUsers}>Inactivate A User</MenuItem>
-        <MenuItem onClick={routeChangeAvaliableBooks}>Consult All Avaliable Books</MenuItem>
-        <MenuItem onClick={routeChangeRegisterNewBook}>Register New Book</MenuItem>
-        <MenuItem onClick={routeChangeRentBook}>Rent Book</MenuItem>
-        <MenuItem onClick={routeChangeReturnBook}>Return Book</MenuItem>
-        <MenuItem onClick={routeChangeAllAdmins}>Consult All Admins</MenuItem>
+        <MenuItem onClick={routeChangeGetBooks}>Consult All Avaliable Books</MenuItem>
       </Menu>
     </React.Fragment>
   )}

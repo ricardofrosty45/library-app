@@ -18,21 +18,18 @@ const CreateProduct = () => {
 
     const [result, setResult] = useState([]);
    
-    const rentsBook = () =>{
-     axios.post("http://localhost:8080/v1/admin/book",{ title: title, category: category, bookExamples: bookExamples, rented: rented}).then(res =>{
+    const deativateUser = () =>{
+     axios.put("http://localhost:8080/v1/admin/inactive/user/"+userId).then(res =>{
           console.log(res);
           console.log(res.data);
-          
           setResult(res.data.outgoing);
       }).catch((error) => { console.log(error) })     
     };
 
 
 
-  const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
-  const [bookExamples, setBookExamples] = useState('');
-  const [rented, setRented] = useState('false');
+  const [userId, setUserId] = useState('');
+  
   const classes = useStyles();
 
   const onChangeHandler = (event, hook) => {
@@ -40,20 +37,10 @@ const CreateProduct = () => {
   };
   const inputFields = [
     {
-      title: 'Title',
-      value: title,
-      onChange: (event) => onChangeHandler(event, setTitle),
+      title: 'User Id',
+      value: userId,
+      onChange: (event) => onChangeHandler(event, setUserId),
     },
-    {
-      title: 'Category',
-      value: category,
-      onChange: (event) => onChangeHandler(event, setCategory),
-    },
-    {
-        title: 'Book Examples',
-        value: bookExamples,
-        onChange: (event) => onChangeHandler(event, setBookExamples),
-      },
 
   ];
 
@@ -61,7 +48,7 @@ const CreateProduct = () => {
     <React.Fragment>
       <Content>
         <div className={classes.item}>
-          <Typography variant="h5">Register new book </Typography>
+          <Typography variant="h5">Deactivate User </Typography>
           {inputFields.map((input, index) => (
             <TextInput
               key={`${index}_${input.title}`}
@@ -76,9 +63,9 @@ const CreateProduct = () => {
             color="primary"
             style={{ marginTop: 20 }}
             size="small"
-            onClick={rentsBook}
+            onClick={deativateUser}
           >
-            Register Book
+            Deactivate
           </Button>
         </div>
       </Content>
