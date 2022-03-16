@@ -1,4 +1,4 @@
-# library-app - AXIANS Test Project
+# library-app - Sample Project - Open Source
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/ricardofrosty45/library-app/tree/main)
 
