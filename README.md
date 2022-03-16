@@ -36,17 +36,15 @@ npm install
 ```
 
 This command will download all of the dependencies.
-After the all of the downloads are done you should run this command
-
+After it, you should run this command
 
 ```sh
 npm start
 ```
 
-Your brownser should automatically start showing you the front end application.
-For full experiencie, you should run the back end application soo you can get the full experience of the project
-(Link is in the top)
-
+Your browser should automatically start the application, showing you the front end.
+For full experiencie, you should run the back end application so you can get the full experience of the project
+(Link is on the top of readme)
 
 
 The second method is using Docker:
@@ -69,4 +67,4 @@ After it, you should run the command
 docker-compose up
 ```
 
-It will automatically this app's container
+It will automatically this app's container and the front end application
