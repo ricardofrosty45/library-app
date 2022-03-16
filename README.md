@@ -2,15 +2,22 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/ricardofrosty45/library-app/tree/main)
 
-this is a front end app created with ReactJs and firebase for auth
+This is a front end app created with ReactJs and firebase for auth. This is a front end application for a back end application made with Java / Spring boot
+Here's the link for the back end code:
+
+```sh
+https://github.com/ricardofrosty45/library-ms
+```
 
 ## Features
 
 - Firebase
 - ReactJs
+- Material UI
 
 
 ## How to run it
+
 First you need to have docker installed on your pc, here's a link
 
 ```sh
